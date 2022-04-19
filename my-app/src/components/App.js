@@ -14,14 +14,17 @@ function App() {
   .then(resp => resp.json())
   .then(data => setEvent(data))
 }, []);
-
+function handleFrontEnd(newEventObject) {
+  const addNewEventObject = [...events, newEventObject]
+    setEvent(addNewEventObject);
+}
   return (
     <div className="App">
       <NavBar />
       {/* <Route path="/"><Home /></Route> */}
       <Switch>
       <Route path="/Home"><Home /></Route>
-        <Route path="/AddEvent"><AddEvent /></Route>
+        <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}/></Route>
         {/* <Route path="/Events" ><Events events={events}/></Route> */}
       </Switch>

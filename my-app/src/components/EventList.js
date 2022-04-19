@@ -1,6 +1,7 @@
 import Events from "./Events";
 
 function EventList({events}) {
+
 const renderEvents = events.map(event => <Events 
     key={event.id}
     id={event.id}
@@ -13,7 +14,7 @@ const renderEvents = events.map(event => <Events
     ageMax={event.ageMax}
     liquor={event.liquor}
     dj={event.dj}
-    cannabis={event.cannabis}
+    green={event.green}
     img={event.img}
 />)
 
