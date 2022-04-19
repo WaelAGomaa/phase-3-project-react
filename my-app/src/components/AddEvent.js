@@ -72,10 +72,9 @@ function AddEvent({handleFrontEnd}){
           .then((newEvent) => handleFrontEnd(newEvent))
         
             e.target.reset();
-
         }
         
-   
+  
 
     return (<form onSubmit={handleSubmit} id="EventForm">
         <div id="first3btn">

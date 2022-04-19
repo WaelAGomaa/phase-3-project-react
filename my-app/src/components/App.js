@@ -10,7 +10,7 @@ function App() {
   const [events, setEvent] = useState([]);
 
   useEffect(()=> {
-  fetch('http://localhost:3001/events')
+  fetch('http://localhost:9292/Events')
   .then(resp => resp.json())
   .then(data => setEvent(data))
 }, []);
