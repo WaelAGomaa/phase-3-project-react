@@ -3,11 +3,13 @@ import { Switch, Route} from 'react-router-dom';
 import NavBar from "./NavBar";
 import AddEvent from "./AddEvent";
 import EventList from "./EventList";
-// import Events from "./Events"; 
+
+
 import Home from "./Home";
 
 function App() {
   const [events, setEvent] = useState([]);
+  const [newGoing, setNewGoing] = useState(false);
 
   useEffect(()=> {
   fetch('http://localhost:9292/Events')
@@ -25,7 +27,10 @@ function handleFrontEnd(newEventObject) {
       <Switch>
       <Route path="/Home"><Home /></Route>
         <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
-        <Route path="/Events"><EventList events={events}/></Route>
+        <Route path="/Events"><EventList events={events}
+        newGoing={newGoing}
+        setNewGoing={setNewGoing}
+          /></Route>
         {/* <Route path="/Events" ><Events events={events}/></Route> */}
       </Switch>
     </div>

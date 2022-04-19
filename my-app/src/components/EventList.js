@@ -16,6 +16,7 @@ const renderEvents = events.map(event => <Events
     dj={event.dj}
     green={event.green}
     img={event.img}
+    events={events}
 />)
 
   return(

@@ -62,14 +62,13 @@ function AddEvent({handleFrontEnd}){
                 dj: dj,
                 green: green
                 };
-            fetch("http://localhost:3001/events",{
-            method : "POST",
-            headers : { "Content-Type": "application/json",
-            Accepts: "application/json",},
-            body: JSON.stringify(newEvent),
-            })
-          .then((r) => r.json())
-          .then((newEvent) => handleFrontEnd(newEvent))
+                fetch("http://localhost:9292/Events",{
+                    method : "POST",
+                    headers : { "Content-Type": "application/json",
+                    Accepts: "application/json",},
+                    body: JSON.stringify(newEvent),
+                    })
+                  .then((r) => handleFrontEnd(newEvent))
         
             e.target.reset();
         }
@@ -83,11 +82,11 @@ function AddEvent({handleFrontEnd}){
             <input onChange={handleDescription} type="text" placeholder="Event Description" />
         </div>
         <div id="second3btn">
-            <input onChange={handleGuestAmounts} type="number" placeholder="Guest Amount" />
+            <input onChange={handleGuestAmounts} type="number" placeholder="Guest Amount" min="5"/>
             <label> Age range</label>
             <input onChange={handleAgeMin} type="number" placeholder="18" min="18" max="99"/>
             <input onChange={handleAgeMax} type="number" placeholder="99" max="99" min="18"/>
-            <input onChange={handleImage}type="file"name="filename"/> 
+            <input accept="image/png, image/jpeg .doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple onChange={handleImage} type="file"name="filename"/> 
         </div>
         <div id="checks">
                 <label>📻</label>
