@@ -8,7 +8,7 @@ function Events({key, id, name, location, date, description, guestAmounts, ageMi
     return (
         <li id="EventCard">
                 <div>
-                    <img className="imageCard" src={img} alt="alt"/>
+                    <img className="imageCard" src={img || "https://sadanduseless.b-cdn.net/wp-content/uploads/2020/03/funny-salad21.jpg"} alt="alt"/>
                     <h2>{name}</h2> 
                     <h3>{location}</h3>
                     <h3>Date: {date}</h3>
@@ -16,9 +16,9 @@ function Events({key, id, name, location, date, description, guestAmounts, ageMi
                     <h3>{guestAmounts}</h3>
                     <h4>Age range from:{ageMin} To:{ageMax}</h4>
 
-                    <h3>{liquor}</h3>
-                    <h4>{dj}</h4>
-                    <h4>{cannabis}</h4>
+                    <h3>{liquor ? '🥂' : null }</h3>
+                    <h4>{dj ? "📻" : null}</h4>
+                    <h4>{cannabis ? "🌿" : null}</h4>
                     {going ? <button id='like-button-red' onClick={handleGoing}>Going!</button>
                         : <button id='like-button-white' onClick={handleGoing}>Nah</button>}
 

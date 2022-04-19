@@ -11,7 +11,7 @@ function AddEvent(){
     function handleSubmit(e){
         e.preventDefault();
         // setIsEvent(!isEvent);
-        console.log("hi");
+        console.log("hi")
     }
 
     return (<form onSubmit={handleSubmit} id="EventForm">

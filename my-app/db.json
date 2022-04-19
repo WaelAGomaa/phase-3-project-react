@@ -23,9 +23,9 @@
       "guestAmounts": 25,
       "ageMin": 18,
       "ageMax": 25,
-      "liquor": true,
+      "liquor": false,
       "dj": false,
-      "cannabis": false,
+      "cannabis": true,
       "img":"https://i.guim.co.uk/img/media/15d62d746d173640828186267c272a07ef56b716/0_135_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1ac1143cd2e6bc38dff171787a8dfeb7"
     },    {
       "id": 3,
@@ -37,8 +37,8 @@
       "ageMin": 18,
       "ageMax": 25,
       "liquor": true,
-      "dj": false,
-      "cannabis": false,
+      "dj": true,
+      "cannabis": true,
       "img":"https://media.vanityfair.com/photos/622a4225dcdd2790085ec5aa/1:1/w_2212,h_2212,c_limit/201875b82bbb6c0990bffb1674f6d811_4096x2212_820c4022.jpeg"
     },    {
       "id": 4,
@@ -49,7 +49,7 @@
       "guestAmounts": 25,
       "ageMin": 18,
       "ageMax": 25,
-      "liquor": true,
+      "liquor": false,
       "dj": false,
       "cannabis": false,
       "img":"https://media.vanityfair.com/photos/622a4225dcdd2790085ec5aa/1:1/w_2212,h_2212,c_limit/201875b82bbb6c0990bffb1674f6d811_4096x2212_820c4022.jpeg"
@@ -62,9 +62,9 @@
       "guestAmounts": 25,
       "ageMin": 18,
       "ageMax": 25,
-      "liquor": true,
+      "liquor": false,
       "dj": false,
-      "cannabis": false,
+      "cannabis": true,
       "img":"https://media.vanityfair.com/photos/622a4225dcdd2790085ec5aa/1:1/w_2212,h_2212,c_limit/201875b82bbb6c0990bffb1674f6d811_4096x2212_820c4022.jpeg"
     },    {
       "id": 6,
