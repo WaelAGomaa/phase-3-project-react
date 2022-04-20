@@ -10,6 +10,7 @@ import Home from "./Home";
 function App() {
   const [events, setEvent] = useState([]);
   const [newGoing, setNewGoing] = useState(false);
+  const [user, setUser] = useState(null)
 
   useEffect(()=> {
   fetch('http://localhost:9292/Events')
@@ -25,7 +26,7 @@ function handleFrontEnd(newEventObject) {
       <NavBar />
       {/* <Route path="/"><Home /></Route> */}
       <Switch>
-      <Route path="/Home"><Home /></Route>
+      <Route path="/Home"><Home setUser={setUser}/></Route>
         <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}
         newGoing={newGoing}

@@ -1,9 +1,9 @@
 import Login from "./Login";
-function Home(){
+function Home({setUser}){
     return (
         <>
         <div className="home">
-            <Login />
+            <Login setUser={setUser}/>
         </div>
         <div id="bottomHome">
                 <p>Don't have an account?</p>
