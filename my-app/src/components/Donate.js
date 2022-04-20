@@ -1,56 +1,53 @@
+import DonateCard from './DonateCard';
 import {useState} from 'react';
-
 function Donate(){
-    const [donate, setDonate] = useState(true);
-    let [num, setNum]= useState(0);
+    const [name, setName] = useState("")
+    const [story, setStory] = useState("")
+    const [amount, setAmount] = useState(0)
 
-    function handleClick() {
-        if(donate){
-            setNum(num + 10)
-            setDonate(false);
-            console.log(num)
-        }else {
-            // setNum(num - 10);
-            setDonate(true)
+    function handleName(event) {
+        setName(event.target.value)
         }
+    function handleStory(event) {
+        setStory(event.target.value)
+        }
+    function handleAmount(event) {
+        setAmount(event.target.value)
+        }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        const newDonation = {
+            amount: amount,
+            name: name,
+            story: story,
+        }
+        e.target.reset();
     }
-    let incNum =()=>{
-        if(0 <10)
-        {
-        setNum(prevNum => prevNum + 10);
-        }
-      };
-   
-     let handleChange = (e)=>{
-       setNum(e.target.value);
-      }
     return (
         <>
         <div className="Donate">
         <h1>Donate</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec euismod, nisl eget consectetur consectetur,
-            nisi nisl aliquam eros, eget tincidunt nisl nisl eget
-            consectetur consectetur.
-        </p>
+
+        <h3>We could not have done this without the help and support of the community</h3>
+        <p> And becasue the community keeps on giving, Feel free to support or ask for support</p>
+        <p> From other members of the community. Read other people's stories and share your own.</p>
+        
         </div>
-        <ul className="Donate-card">
-        <h1>cassie</h1>
-        <p>
-        No! Yes! fսck it! I am in love with Nate Jacobs and he is in love with me! And don't you fսck¡ng give me that look, Maddy, because I didn't fսck your boyfriend!
+       <DonateCard name={name} amount={amount} story={story}/>
+       <form className="DonateForm" onSubmit={handleSubmit}>
+                <div>
+                    <label>Your Username:</label>
+                    <input onChange={handleName} type="text" placeholder="Enter your name"></input>
+                    <label>Wish to raise:</label>
+                    <input onChange={handleAmount} type="number" placeholder="Enter your donation amount"></input>
+                </div>
 
-        You two were broken up for three weeks and three days before we even had sеx, so I didn't betray you!
+                    <label>Your Story:</label>
+                    <input onChange={handleStory} id="storyBox" type="text" placeholder="Enter your donation description"></input>
 
-        Plus, you guys are terrible for each other and you know I'm right and you guys can all judge me if you want, but I do not care! I have never, ever been happier!
-
-
-        </p>
-        <h4 type="text" value={num} onChange={handleChange}>{num}$ raised of 1,000,000$ </h4> 
-
-        <button className="donateBtn" onClick={handleClick}>{donate ? "Donate $10" : "Thanks!"}</button>
-
-        </ul>
+            <input type="submit" value="Add Story" className="donateBtn" />
+       </form>
         </>
     );
 }

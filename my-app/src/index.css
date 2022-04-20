@@ -1,9 +1,12 @@
 body {
-  /* background-color: #696d7d; */
 background-color: rgb(37, 36, 36);
 }
+
+input text {
+  color: white;
+}
+
 .App{
-  /* display: block; */
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -12,7 +15,6 @@ background-color: rgb(37, 36, 36);
 }
 .icon-bar {
   display: block;
-
   flex-direction: row;
   align-items: center;
  justify-content: center;
@@ -23,9 +25,7 @@ background-color: rgb(37, 36, 36);
   box-shadow: 2px 5px 4px #888888;
   margin-top:10px;
   margin-bottom:20px;
-  border-radius: 10px;
-
- 
+  border-radius: 10px; 
 }
 
 .icon-bar button {
@@ -45,11 +45,8 @@ background-color: rgb(37, 36, 36);
   background-color: rgb(250, 239, 239);
 }
 
-.active {
+.Rainbow {
   background-image: linear-gradient(to left, rgb(232, 166, 232), rgb(104, 59, 137), rgb(106, 106, 234), rgb(83, 145, 83), rgb(229, 229, 126), rgb(248, 204, 123), rgb(241, 107, 107));
-}
-input text {
-  color: white;
 }
 
 #EventForm{
@@ -57,7 +54,6 @@ input text {
   padding: 20px;
   padding-bottom: 50px;
   border-radius: 10px;
-  /* margin: 20px; */
   text-align: absolute;
   box-shadow: 5px 10px 8px #888888;
   width: 50%;
@@ -137,6 +133,12 @@ input text {
   margin-top: 10px;
   margin-bottom: 10px;
   box-shadow: 2px 5px 4px #888888;
+  margin-top:50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 
 
@@ -238,13 +240,7 @@ input text {
   color: #FFFFFF;
   border-radius: 5px;
 }
-.home{
-  margin-top:50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+
 
 .loginData{
   /* padding: 20px; */
@@ -269,6 +265,7 @@ input text {
 }
 .Donate{
   background-color: rgb(250, 239, 239);
+  text-align: center;
   color: black;
   font-size: 20px;
   padding: 10px;
@@ -316,8 +313,7 @@ input text {
 }
 
 .donateBtn{
-
-
+  border-radius: 7px;
   text-align: center;
   margin-left: 70%;
   margin-right: auto;
@@ -329,4 +325,44 @@ input text {
   padding: 8px;
   box-shadow: rgba(63, 205, 75, 0.5) 0 1px 30px;
   color: #FFFFFF;
+}
+
+.DonateForm{
+  background-color: rgb(218, 250, 215);
+  padding: 20px;
+  /* padding-bottom: 50px; */
+  border-radius: 10px;
+  text-align: absolute;
+  box-shadow: rgba(63, 205, 75, 0.5) 0 1px 30px;
+  box-shadow: 5px 10px 8px #888888;
+  width: 50%;
+  margin-top: 10%;
+  display: block;
+}
+.DonateForm input[type="text"]{
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  margin: 8px;
+  /* margin-right: 10%; */
+
+}
+.DonateForm input[type="number"]{
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  margin: 8px;
+  /* margin-right: 10%; */
+}
+#storyBox{
+  text-align: center;
+  /* padding: 20px;   */
+  width: 80%;
+  height: 150px;
+  /* padding: 12px 20px; */
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
 }

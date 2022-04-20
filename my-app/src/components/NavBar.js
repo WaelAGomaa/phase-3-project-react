@@ -4,7 +4,7 @@ function NavBar(){
     
     return (
         <div className="icon-bar">
-        <Link to="/Home"><button className="active">Home</button> </Link>
+        <Link to="/Home"><button className="Rainbow">Home</button> </Link>
         <Link to="/Events"><button>Events</button> </Link>
         <Link to="/About"><button>About</button> </Link>
         <Link to="/Donate"><button>Donate</button></Link>
