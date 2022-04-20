@@ -3,15 +3,20 @@ import { Switch, Route} from 'react-router-dom';
 import NavBar from "./NavBar";
 import AddEvent from "./AddEvent";
 import EventList from "./EventList";
-
-
+import Donate from "./Donate";
+import About from './About';
 import Home from "./Home";
 
 function App() {
   const [events, setEvent] = useState([]);
   const [newGoing, setNewGoing] = useState(false);
   const [user, setUser] = useState(null)
+  const [isShow , setShow] = useState(false);
 
+  
+  function toggleShow() {
+    setShow(!isShow)
+  }
   useEffect(()=> {
   fetch('http://localhost:9292/Events')
   .then(resp => resp.json())
@@ -26,7 +31,9 @@ function handleFrontEnd(newEventObject) {
       <NavBar />
       {/* <Route path="/"><Home /></Route> */}
       <Switch>
-      <Route path="/Home"><Home setUser={setUser}/></Route>
+      <Route path="/Home"><Home setUser={setUser} toggleShow={toggleShow} isShow={isShow} /></Route>
+      <Route path="/About"><About /></Route>
+      <Route path="/Donate"><Donate /></Route>
         <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}
         newGoing={newGoing}

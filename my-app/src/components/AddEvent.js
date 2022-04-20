@@ -95,7 +95,7 @@ function AddEvent({handleFrontEnd}){
                 <input onChange={handleDJ}type="checkbox"></input>
                 <label>🌿</label>
                 <input onChange={handleGreen}type="checkbox"></input>
-                <label >Event Date</label>
+                <label>Event Date</label>
                 <input onChange={handleDate} type="date" />
         </div>
             <div id="btnAdd">

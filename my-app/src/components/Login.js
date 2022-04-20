@@ -35,7 +35,7 @@ function Login({setUser}) {
         <input className="loginData" type="password" name="pwd" required="required"></input>
     </div>
     <div>
-        <input id="loginBtn" type="submit"  alt="Login"></input>
+        <input className="loginBtn" type="submit"  alt="Login" value="Login"></input>
     </div>
     </form>
     </>

@@ -47,40 +47,19 @@ function Events({key, id, name, location, date, description, guestAmounts, ageMi
  let handleChange = (e)=>{
    setNum(e.target.value);
   }
-//   || "https://sadanduseless.b-cdn.net/wp-content/uploads/2020/03/funny-salad21.jpg"
+
     return (
         <li id="EventCard">
-                <div>
-                    <img className="imageCard" src={img} alt="alt"/>
-                    <h1>{name}</h1> 
-                    <h3>📍 {location}</h3>
-                    <h3>Date: {date}</h3>
-                    <h3>{description}</h3>
-
-                        <h3 type="text" value={num} onChange={handleChange}>Available: {num}</h3>
-                    <h4>Age range from: {ageMin} To: {ageMax}</h4>
-
-                    <h3>{liquor ? '🥂' : null }</h3>
-                    <h4>{dj ? "📻" : null}</h4>
-                    <h4>{green ? "🌿" : null}</h4>
-
-                    <button className="going-btn" onClick={handleClick}>{going ? "Nah" : "Going!"}</button>
-
-                        {/* {going ? 
-                        <button type="button" className="going-btn" 
-                         onClick={() => {
-                            handleGoing();
-                            decNum();
-                          }}
-                        >Going!</button>
-                        : <button type="button" className="going-btn" 
-                        onClick={() => {
-                            handleGoing();
-                            incNum();
-                          }}
-                        >Nah</button>
-                        } */}
-                </div>
+          <div>
+              <img className="imageCard" src={img  || "https://upload.wikimedia.org/wikipedia/commons/b/b8/Classic_Rainbow_Flag.png"} alt="alt"/>
+              <h1>{name}</h1> 
+              <h3>📍 {location} , 📅: {date}</h3>
+              <h3>{description}</h3>
+              <h3 type="text" value={num} onChange={handleChange}>Available: {num}</h3>
+              <h4>Age range from: {ageMin} To: {ageMax}</h4>
+              <h3 id="emoji">{liquor ? '🥂' : null }     {dj ? "📻" : null}     {green ? "🌿" : null}</h3>
+              <button className="going-btn" onClick={handleClick}>{going ? "Nah" : "Going!"}</button>
+          </div>
         </li>
     )
 }
