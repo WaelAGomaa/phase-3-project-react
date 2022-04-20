@@ -31,14 +31,14 @@ function handleFrontEnd(newEventObject) {
       <NavBar />
       {/* <Route path="/"><Home /></Route> */}
       <Switch>
-      <Route path="/Home"><Home setUser={setUser} toggleShow={toggleShow} isShow={isShow} /></Route>
-      <Route path="/About"><About /></Route>
-      <Route path="/Donate"><Donate /></Route>
-        <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
+        <Route path="/Home"><Home user={user} setUser={setUser} toggleShow={toggleShow} isShow={isShow} /></Route>
+        <Route path="/About"><About /></Route>
+        <Route path="/Donate"><Donate /></Route>
+        <Route path="/AddEvent"><AddEvent handleFrontEnd=   {handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}
         newGoing={newGoing}
-        setNewGoing={setNewGoing}
-          /></Route>
+        setNewGoing={setNewGoing} user={user}
+        /></Route>
         {/* <Route path="/Events" ><Events events={events}/></Route> */}
       </Switch>
     </div>

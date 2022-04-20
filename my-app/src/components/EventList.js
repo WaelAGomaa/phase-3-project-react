@@ -1,8 +1,8 @@
 import Events from "./Events";
 
-function EventList({events}) {
+function EventList({events, user}) {
 
-const renderEvents = events.map(event => <Events 
+const renderEvents = events.map(event => <><Events 
     key={event.id}
     id={event.id}
     name={event.name}
@@ -17,7 +17,9 @@ const renderEvents = events.map(event => <Events
     green={event.green}
     img={event.img}
     events={events}
-/>)
+    user={user}
+/>
+</>)
 
   return(
     <main>
