@@ -62,6 +62,7 @@ function AddEvent({handleFrontEnd}){
                 dj: dj,
                 green: green
                 };
+                
                 fetch("http://localhost:9292/Events",{
                     method : "POST",
                     headers : { "Content-Type": "application/json",
@@ -69,11 +70,10 @@ function AddEvent({handleFrontEnd}){
                     body: JSON.stringify(newEvent),
                     })
                   .then((r) => handleFrontEnd(newEvent))
+
         
             e.target.reset();
         }
-        
-  
 
     return (<form onSubmit={handleSubmit} id="EventForm">
         <div id="first3btn">
@@ -92,14 +92,14 @@ function AddEvent({handleFrontEnd}){
                 <label>📻</label>
                 <input onChange={handleLiquor} type="checkbox"></input>
                 <label>🥂</label>
-                <input onchange={handleDJ}type="checkbox"></input>
+                <input onChange={handleDJ}type="checkbox"></input>
                 <label>🌿</label>
                 <input onChange={handleGreen}type="checkbox"></input>
                 <label >Event Date</label>
                 <input onChange={handleDate} type="date" />
         </div>
             <div id="btnAdd">
-                <input class="button-36" type="submit" value="Add Event" />
+                <input className="button-36" type="submit" value="Add Event" />
             </div>
         </form>
     )
