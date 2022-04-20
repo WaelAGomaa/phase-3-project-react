@@ -9,7 +9,7 @@ function Home({toggleShow, isShow, setUser, user}){
         {isShow ? 
                 null :(
                     <>
-                        {!user ? <Login setUser={setUser}/>: <GoingToList />}
+                        {!user ? <Login setUser={setUser}/>: <GoingToList user={user}/>}
                     </>
                  )}
                  {user ? null : (<div id="bottomHome">
