@@ -32,7 +32,7 @@ function DonateCard({name, story, amount}){
     </p>
     <h4 type="text" value={num} onChange={handleChange}>{num}$ raised of {amount}$ </h4> 
 
-    <button className="donateBtn" onClick={handleClick}>{donate ? "Donate $10" : "Thanks!"}</button>
+    <button className="donateBtn" onClick={handleClick}>{donate ? "Donate $10" : "Donate again?"}</button>
 
     </ul>
     )
