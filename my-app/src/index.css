@@ -1,5 +1,5 @@
 body {
-background-color: rgb(37, 36, 36);
+background-color: rgb(0, 0, 0);
 }
 
 input text {
@@ -17,20 +17,20 @@ input text {
   display: block;
   flex-direction: row;
   align-items: center;
- justify-content: center;
+  justify-content: center;
   width: 90%;
   background-color: #555;
   float:right;
   margin-left:10%;
   box-shadow: 2px 5px 4px #888888;
-  margin-top:10px;
+  /* margin-top:10px; */
   margin-bottom:20px;
   border-radius: 10px; 
 }
 
 .icon-bar button {
   float: left;
-  width: 20%;
+  width: 18%;
   text-align: center;
   padding: 18px 0;
   transition: all 0.3s ease;
@@ -40,6 +40,19 @@ input text {
   border-radius: 10px;
 
 }
+.icon-bar h1{  
+  float: left;
+  width: 10%;
+  text-align: center;
+  padding: 18px 0;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 30px;
+  background-color:#f0bbd3;
+  border-radius: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
 .icon-bar button:hover {
   background-color: rgb(250, 239, 239);
@@ -48,7 +61,23 @@ input text {
 .Rainbow {
   background-image: linear-gradient(to left, rgb(232, 166, 232), rgb(104, 59, 137), rgb(106, 106, 234), rgb(83, 145, 83), rgb(229, 229, 126), rgb(248, 204, 123), rgb(241, 107, 107));
 }
-
+/* #el{
+  text-align: center;
+  padding: 18px 0;
+  width: 10%;
+  height: 80px;
+  /* padding: 12px 20px; */
+  /* box-sizing: border-box; */
+  /* border: 2px solid #ccc; */
+  /* border-radius: 4px; */
+  /* background-color: rgb(250, 239, 239); */
+  /* resize: none; */
+  /* box-shadow: 5px 10px 8px #888888; */
+  /* font-style: bold; */
+  /* float:right; */
+  /* display: block; */
+/* margin-right: auto; */
+/* }  */
 #EventForm{
   background-color: rgb(250, 239, 239);
   padding: 20px;
@@ -84,7 +113,7 @@ input text {
   color: black;
   margin: 8px;
 }
-#EventForm input[type="file"]{
+#EventForm input[type="url"]{
   text-align: center;
   padding: 0%;
   /* margin: 8px; */
@@ -110,8 +139,8 @@ input text {
   background-color:rgb(250, 239, 239);
 }
 .imageCard {
-  height: 75px;
-  width: 75px; 
+  height: 120px;
+  width: 140px; 
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -209,10 +238,11 @@ input text {
   flex-shrink: 0;
   font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
   font-size: 16px;
-  padding: 8px;
+  padding: 15px;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  height: 22px;
 }
 
 .going-btn :hover {
@@ -224,6 +254,24 @@ input text {
   .going-btn {
     padding: 0 2.6rem;
   }
+}
+
+.block-btn{
+  text-align: center;
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  /* padding: 15px; */
+  margin-left: auto;
+  /* margin-right: auto; */
+  display: block;
+  height: 38px;
 }
 
 .loginBtn{
@@ -258,7 +306,7 @@ input text {
   /* margin-top:50px; */
   text-align: center;
 }
-#emoji{
+.emoji{
   text-align: center;
   margin-top: 10px;
   margin-bottom: 25px;
@@ -344,25 +392,34 @@ input text {
   font-size: 15px;
   color: black;
   margin: 8px;
-  /* margin-right: 10%; */
-
 }
 .DonateForm input[type="number"]{
   text-align: center;
   font-size: 15px;
   color: black;
   margin: 8px;
-  /* margin-right: 10%; */
 }
 #storyBox{
   text-align: center;
-  /* padding: 20px;   */
   width: 80%;
   height: 150px;
-  /* padding: 12px 20px; */
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
 }
+#title{
+  text-align: center;
+  padding: 20px;
+  width: 20%;
+  height: 80px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color:#f0bbd3;
+  resize: none;
+  box-shadow: 5px 10px 8px #888888;
+  font-style: bold;
+}
+

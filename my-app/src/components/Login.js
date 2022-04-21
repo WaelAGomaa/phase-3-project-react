@@ -24,6 +24,7 @@ function Login({setUser}) {
     }
 
     return<>
+    <h1 id="title">EventListener</h1>
     <form onSubmit={handleLogin} className="home">
     <p>Login to your account</p>
     <div>

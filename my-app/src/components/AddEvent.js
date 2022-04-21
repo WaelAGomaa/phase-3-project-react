@@ -86,13 +86,13 @@ function AddEvent({handleFrontEnd}){
             <label> Age range</label>
             <input onChange={handleAgeMin} type="number" placeholder="18" min="18" max="99"/>
             <input onChange={handleAgeMax} type="number" placeholder="99" max="99" min="18"/>
-            <input accept="image/png, image/jpeg .doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple onChange={handleImage} type="file"name="filename"/> 
+            <input onChange={handleImage} type="url"name="filename" placeholder="Image URL"/> 
         </div>
         <div id="checks">
                 <label>📻</label>
-                <input onChange={handleLiquor} type="checkbox"></input>
+                <input onChange={handleDJ} type="checkbox"></input>
                 <label>🥂</label>
-                <input onChange={handleDJ}type="checkbox"></input>
+                <input onChange={handleLiquor}type="checkbox"></input>
                 <label>🌿</label>
                 <input onChange={handleGreen}type="checkbox"></input>
                 <label>Event Date</label>
