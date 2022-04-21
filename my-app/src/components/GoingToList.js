@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import EventGoingTo from "./EventGoingTo";
 function GoingToList({user}) {
     const [goList, setGoList] = useState(null)
-
     useEffect(() => {
         fetch("http://localhost:9292/Favorites",{
             method : "POST",
@@ -18,7 +17,7 @@ function GoingToList({user}) {
 
     return<div>
         {goList ? (goList.map(party =>  {
-            return <EventGoingTo name ={party.name}
+            return <EventGoingTo id={party.id} name ={party.name}
             date={party.date} description={party.description}
             />
         })) : null}

@@ -1,4 +1,4 @@
-function EventGoingTo({name, date, description}) {
+function EventGoingTo({name, date, description, id}) {
     return <div>
     <li id="EventCard">
           <div>
