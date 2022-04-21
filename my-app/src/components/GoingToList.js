@@ -20,6 +20,8 @@ function GoingToList({user}) {
         {goList ? (goList.map(party =>  {
             return <EventGoingTo name ={party.name}
             date={party.date} description={party.description}
+            location={party.location} dj={party.dj}
+            green={party.green} liquor={party.liquor}
             />
         })) : null}
     </div>

@@ -1,6 +1,6 @@
 import DonateCard from './DonateCard';
 import {useState} from 'react';
-function Donate({toggleShow, isShow}){
+function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate}){
     const [name, setName] = useState("")
     const [story, setStory] = useState("")
     const [amount, setAmount] = useState(0)
@@ -22,8 +22,23 @@ function Donate({toggleShow, isShow}){
             name: name,
             story: story,
         }
-        e.target.reset();
+        fetch("http://localhost:9292/Donate",{
+            method : "POST",
+            headers : { "Content-Type": "application/json",
+            Accepts: "application/json",},
+            body: JSON.stringify(newDonation),
+            })
+          .then((r) => handleFrontEndDonation(newDonation))
+
+
+    e.target.reset();
+
     }
+    const renderDonates = donate.map(i => <><DonateCard 
+        name={i.name}
+        story={i.story}
+        amount={i.amount}/></>)
+
     return (
         <>
         <div className="Donate">
@@ -34,10 +49,11 @@ function Donate({toggleShow, isShow}){
         <p> From other members of the community. Read other people's stories and share your own.</p>
         
         </div>
-       <DonateCard name={name} amount={amount} story={story}/>
+       {donate? renderDonates : null}
+       {/* <DonateCard name={name} amount={amount} story={story}/> */}
        <button className="donateBtn"  onClick={toggleShow}>Create +</button> 
        {isShow ? 
-                null :(
+                (
                     <form className="DonateForm" onSubmit={handleSubmit}>
                     <div>
                         <label>Your Username:</label>
@@ -51,7 +67,7 @@ function Donate({toggleShow, isShow}){
     
                 <input type="submit" value="Add Story" className="donateBtn" />
            </form>
-                        )}
+                        ): null}
         </>
     );
 }

@@ -3,7 +3,9 @@ import {Link } from 'react-router-dom';
 function NavBar(){
     
     return (
+        
         <div className="icon-bar">
+        <h1 id="el">EL</h1>
         <Link to="/Home"><button className="Rainbow">Home</button> </Link>
         <Link to="/Events"><button>Events</button> </Link>
         <Link to="/About"><button>About</button> </Link>

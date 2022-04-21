@@ -53,18 +53,20 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
  let handleChange = (e)=>{
    setNum(e.target.value);
   }
-
+  function handleDelete(){
+  fetch(`http://localhost:9292/Events:${id}`, { method: 'DELETE' });
+  }
     return (
         <li id="EventCard">
           <div>
-              <img className="imageCard" src={img  || "https://upload.wikimedia.org/wikipedia/commons/b/b8/Classic_Rainbow_Flag.png"} alt="alt"/>
+              <img className="imageCard" src={img} alt="alt"/>
               <h1>{name}</h1> 
               <h3>📍 {location} , 📅: {date}</h3>
               <h3>{description}</h3>
               <h3 type="text" value={num} onChange={handleChange}>Available: {num}</h3>
               <h4>Age range from: {ageMin} To: {ageMax}</h4>
-              <h3 id="emoji">{liquor ? '🥂' : null }     {dj ? "📻" : null}     {green ? "🌿" : null}</h3>
-              {user ? (              <button className="going-btn" onClick={handleClick}>{going ? "Nah" : "Going!"}</button>) : (<button className="going-btn">log in to rsvp!</button>)}
+              <h3 className="emoji">{liquor ? '🥂' : null }     {dj ? "📻" : null}     {green ? "🌿" : null}</h3>
+              {user ? ( <><button className="going-btn" onClick={handleClick}>{going ? "Not Going" : "Going!"}</button> <button onClick={handleDelete} className="block-btn">Block 🚫</button></>) : (<button className="going-btn">log in to rsvp!</button>)}
 
           </div>
         </li>
