@@ -1,21 +1,20 @@
-// import {useState} from 'react';
 import Login from "./Login";
-function Home({toggleShow, isShow}){
+import GoingToList from "./GoingToList";
+
+function Home({toggleShow, isShow, setUser, user}){
 
 
     return (
         <>
         {isShow ? 
                 null :(
-                        <div className="home">
-                      <Login />
-                            
-                        </div>
-                        )}
-                        <div id="bottomHome">
-                            <button className="loginBtn"  onClick={toggleShow}>Don't have an account?</button>  
-                        </div>
-                
+                    <>
+                        {!user ? <Login setUser={setUser}/>: <GoingToList user={user}/>}
+                    </>
+                 )}
+                 {user ? null : (<div id="bottomHome">
+                    <button className="loginBtn"  onClick={toggleShow}>Don't have an account?</button>  
+                    </div>)}
                 {isShow ? 
                 (<div className="home">
             <form>

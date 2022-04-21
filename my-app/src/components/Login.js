@@ -1,5 +1,5 @@
 
-function Login() {
+function Login({setUser}) {
 
     function handleLogin(e){
         e.preventDefault();
@@ -13,11 +13,18 @@ function Login() {
             Accepts: "application/json",},
             body: JSON.stringify(login),
         })
-        .then(resp => console.log(resp))
+        .then(resp => resp.json())
+        .then(response => {console.log(response)
+            if(response.message === 'success!') {
+                setUser(login.username)
+            } else {
+                window.alert("bad login!");
+            }
+        })
     }
 
     return<>
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin} className="home">
     <p>Login to your account</p>
     <div>
         <label >UserName: </label>

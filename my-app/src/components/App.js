@@ -10,6 +10,7 @@ import Home from "./Home";
 function App() {
   const [events, setEvent] = useState([]);
   const [newGoing, setNewGoing] = useState(false);
+  const [user, setUser] = useState(null)
   const [isShow , setShow] = useState(false);
 
   
@@ -30,14 +31,14 @@ function handleFrontEnd(newEventObject) {
       <NavBar />
       {/* <Route path="/"><Home /></Route> */}
       <Switch>
-      <Route path="/Home"><Home toggleShow={toggleShow} isShow={isShow}/></Route>
+      <Route path="/Home"><Home user={user} setUser={setUser} toggleShow={toggleShow} isShow={isShow}/></Route>
       <Route path="/About"><About /></Route>
       <Route path="/Donate"><Donate toggleShow={toggleShow} isShow={isShow}/></Route>
         <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}
         newGoing={newGoing}
-        setNewGoing={setNewGoing}
-          /></Route>
+        setNewGoing={setNewGoing} user={user}
+        /></Route>
         {/* <Route path="/Events" ><Events events={events}/></Route> */}
       </Switch>
     </div>
