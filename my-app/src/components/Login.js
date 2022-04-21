@@ -1,8 +1,11 @@
-
 function Login({setUser}) {
+
+
+ 
 
     function handleLogin(e){
         e.preventDefault();
+
         let login = {
             username: e.target[0].value,
             password: e.target[1].value
@@ -18,28 +21,26 @@ function Login({setUser}) {
             if(response.message === 'success!') {
                 setUser(login.username)
             } else {
-                window.alert("bad login!");
+                window.alert("Invalid login!");
             }
         })
     }
 
-    return<>
-    <h1 id="title">EventListener</h1>
-    <form onSubmit={handleLogin} className="home">
-    <p>Login to your account</p>
-    <div>
-        <label >UserName: </label>
-        <input className="loginData" type="text" name="userId" required="required"></input>
-    </div>
-    <div>
-        <label>Password: </label>
-        <input className="loginData" type="password" name="pwd" required="required"></input>
-    </div>
-    <div>
-        <input className="loginBtn" type="submit"  alt="Login" value="Login"></input>
-    </div>
-    </form>
-    </>
+    return(<form onSubmit={handleLogin} className="home">
+        <p>Login to your account</p>
+        <div>
+            <label >UserName: </label>
+            <input className="loginData" type="text" name="userId" required="required"></input>
+        </div>
+        <div>
+            <label>Password: </label>
+            <input className="loginData" type="password" name="pwd" required="required"></input>
+        </div>
+        <div>
+            <input className="loginBtn" type="submit"  alt="Login" value="Login"></input>
+        </div>
+        </form>
+    )
 }
 
 export default Login

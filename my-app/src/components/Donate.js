@@ -65,7 +65,7 @@ function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate})
                         <label>Your Story:</label>
                         <input onChange={handleStory} id="storyBox" type="text" placeholder="Enter your donation description"></input>
     
-                <input type="submit" value="Add Story" className="donateBtn" />
+                <input type="submit" value="Add Story" className="donateBtn2" />
            </form>
                         ): null}
         </>
