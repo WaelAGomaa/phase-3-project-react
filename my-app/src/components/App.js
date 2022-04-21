@@ -32,7 +32,7 @@ function handleFrontEnd(newEventObject) {
       <Switch>
       <Route path="/Home"><Home toggleShow={toggleShow} isShow={isShow}/></Route>
       <Route path="/About"><About /></Route>
-      <Route path="/Donate"><Donate /></Route>
+      <Route path="/Donate"><Donate toggleShow={toggleShow} isShow={isShow}/></Route>
         <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
         <Route path="/Events"><EventList events={events}
         newGoing={newGoing}

@@ -1,6 +1,6 @@
 import DonateCard from './DonateCard';
 import {useState} from 'react';
-function Donate(){
+function Donate({toggleShow, isShow}){
     const [name, setName] = useState("")
     const [story, setStory] = useState("")
     const [amount, setAmount] = useState(0)
@@ -35,19 +35,23 @@ function Donate(){
         
         </div>
        <DonateCard name={name} amount={amount} story={story}/>
-       <form className="DonateForm" onSubmit={handleSubmit}>
-                <div>
-                    <label>Your Username:</label>
-                    <input onChange={handleName} type="text" placeholder="Enter your name"></input>
-                    <label>Wish to raise:</label>
-                    <input onChange={handleAmount} type="number" placeholder="Enter your donation amount"></input>
-                </div>
-
-                    <label>Your Story:</label>
-                    <input onChange={handleStory} id="storyBox" type="text" placeholder="Enter your donation description"></input>
-
-            <input type="submit" value="Add Story" className="donateBtn" />
-       </form>
+       <button className="donateBtn"  onClick={toggleShow}>Create +</button> 
+       {isShow ? 
+                null :(
+                    <form className="DonateForm" onSubmit={handleSubmit}>
+                    <div>
+                        <label>Your Username:</label>
+                        <input onChange={handleName} type="text" placeholder="Enter your name"></input>
+                        <label>Wish to raise:</label>
+                        <input onChange={handleAmount} type="number" placeholder="Enter your donation amount"></input>
+                    </div>
+    
+                        <label>Your Story:</label>
+                        <input onChange={handleStory} id="storyBox" type="text" placeholder="Enter your donation description"></input>
+    
+                <input type="submit" value="Add Story" className="donateBtn" />
+           </form>
+                        )}
         </>
     );
 }
