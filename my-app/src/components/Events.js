@@ -1,10 +1,15 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 function Events({key, id, user, name, location, date, description, guestAmounts, ageMin, ageMax, liquor, dj, green, img, events, newGoing, setNewGoing, toggle, setToggle}) {
 
 
     let [num, setNum]= useState(guestAmounts);
     const [going, setGoing] = useState(false);
+
+    let eventCheckObj = {
+      username: user,
+      event_id: id
+    }
 
     function handleClick(e) {
       console.log(e)
@@ -42,6 +47,25 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
     method:'DELETE'})
 
   }
+  function favFetch () {
+    (fetch("http://localhost:9292/checkFav",{
+      method : "POST",
+      headers : { "Content-Type": "application/json",
+      Accepts: "application/json",},
+      body: JSON.stringify(eventCheckObj),
+  })
+.then(r => r.json())
+.then(check => {
+  if (check.status == "OK")
+  setGoing(true)
+}))
+  }
+  function checkifFav(){
+    if (user) {
+      favFetch()
+    }
+  }
+  useEffect(checkifFav,[])
 
     return (
         <li id="EventCard">
