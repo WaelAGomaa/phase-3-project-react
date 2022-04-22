@@ -1,5 +1,11 @@
+@font-face{
+  font-family: "Game Of Squids";
+  src: url(../public/fonts/Game\ Of\ Squids.ttf);
+}
+
 body {
-background-color: rgb(0, 0, 0);
+  background-image: linear-gradient(to bottom,white 45%, rgb(232, 166, 232), rgb(104, 59, 137), rgb(106, 106, 234), rgb(83, 145, 83), rgb(229, 229, 126), rgb(248, 204, 123), rgb(241, 107, 107));
+background-repeat: none;
 }
 
 input text {
@@ -12,6 +18,7 @@ input text {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 .icon-bar {
   display: block;
@@ -52,6 +59,9 @@ input text {
   border-radius: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
+  /* font-family: "Game Of Squids"; */
+  /* text-decoration : linear-gradient(to left, rgb(232, 166, 232), rgb(104, 59, 137), rgb(106, 106, 234), rgb(83, 145, 83), rgb(229, 229, 126), rgb(248, 204, 123), rgb(241, 107, 107)); */
+
 }
 
 .icon-bar button:hover {
@@ -61,23 +71,7 @@ input text {
 .Rainbow {
   background-image: linear-gradient(to left, rgb(232, 166, 232), rgb(104, 59, 137), rgb(106, 106, 234), rgb(83, 145, 83), rgb(229, 229, 126), rgb(248, 204, 123), rgb(241, 107, 107));
 }
-/* #el{
-  text-align: center;
-  padding: 18px 0;
-  width: 10%;
-  height: 80px;
-  /* padding: 12px 20px; */
-  /* box-sizing: border-box; */
-  /* border: 2px solid #ccc; */
-  /* border-radius: 4px; */
-  /* background-color: rgb(250, 239, 239); */
-  /* resize: none; */
-  /* box-shadow: 5px 10px 8px #888888; */
-  /* font-style: bold; */
-  /* float:right; */
-  /* display: block; */
-/* margin-right: auto; */
-/* }  */
+ 
 #EventForm{
   background-color: rgb(250, 239, 239);
   padding: 20px;
@@ -87,6 +81,8 @@ input text {
   box-shadow: 5px 10px 8px #888888;
   width: 50%;
   margin-top: 10%;
+  margin-bottom: 218px;
+
 }
 #EventForm input[type="text"]{
   text-align: center;
@@ -137,6 +133,7 @@ input text {
   width: 500px;
   color: black;
   background-color:rgb(250, 239, 239);
+
 }
 .imageCard {
   height: 120px;
@@ -328,7 +325,7 @@ input text {
   background-color: rgb(218, 250, 215);
   color: black;
   font-size: 20px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   margin-left: 160px;
   margin-right: 160px;
@@ -358,6 +355,7 @@ input text {
   margin-bottom: 10px;
   box-shadow: 2px 5px 4px #888888;
   text-align: center;
+  margin-bottom: 238px;
 }
 
 .donateBtn{
@@ -373,8 +371,20 @@ input text {
   padding: 8px;
   box-shadow: rgba(63, 205, 75, 0.5) 0 1px 30px;
   color: #FFFFFF;
+  margin-bottom: 265px;
 }
-
+.donateBtn2{  border-radius: 7px;
+  text-align: center;
+  margin-left: 70%;
+  margin-right: auto;
+  margin-top: 10px;
+  display: block;
+  background-image: linear-gradient(92.88deg, #45b574 9.16%, #43cc6e 43.89%, #47d73f 64.72%);
+  border-style: none;
+  box-sizing: border-box;
+  padding: 8px;
+  box-shadow: rgba(63, 205, 75, 0.5) 0 1px 30px;
+  color: #FFFFFF;}
 .DonateForm{
   background-color: rgb(218, 250, 215);
   padding: 20px;
@@ -421,5 +431,7 @@ input text {
   resize: none;
   box-shadow: 5px 10px 8px #888888;
   font-style: bold;
+  /* font-family: "Game Of Squids"; */
+
 }
 
