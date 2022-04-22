@@ -37,25 +37,13 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
           })
         }
     }
-
-  let incNum =()=>{
-    if(guestAmounts<10)
-    {
-    setNum(prevNum => prevNum + 1);
-    }
-  };
-  let decNum = () => {
-     if(guestAmounts>0)
-     {
-      setNum(prevNum => prevNum - 1);
-     }
-  }
  let handleChange = (e)=>{
    setNum(e.target.value);
   }
-  function handleDelete(){
-  fetch(`http://localhost:9292/Events:${id}`, { method: 'DELETE' });
-  }
+  function handleDelete(e){
+  fetch(`http://localhost:9292/Events/${parseInt(e.target.id)}`,{
+    method:'DELETE'})}
+
     return (
         <li id="EventCard">
           <div>
@@ -66,7 +54,7 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
               <h3 type="text" value={num} onChange={handleChange}>Available: {num}</h3>
               <h4>Age range from: {ageMin} To: {ageMax}</h4>
               <h3 className="emoji">{liquor ? '🥂' : null }     {dj ? "📻" : null}     {green ? "🌿" : null}</h3>
-              {user ? ( <><button className="going-btn" onClick={handleClick}>{going ? "Not Going" : "Going!"}</button> <button onClick={handleDelete} className="block-btn">Block 🚫</button></>) : (<button className="going-btn">log in to rsvp!</button>)}
+              {user ? ( <><button className="going-btn" onClick={handleClick}>{going ? "Not Going" : "Going!"}</button> <button id={id} onClick={handleDelete} className="block-btn">Block 🚫</button></>) : (<button className="going-btn">log in to rsvp!</button>)}
 
           </div>
         </li>
