@@ -15,9 +15,8 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
         if(going){
             setNum(num + 1)
             setGoing(false);
-            clickinfo.AddOrSubtractFromList = "add"
             fetch("http://localhost:9292/Users",{
-              method : "PATCH",
+              method : "PUT",
               headers : { "Content-Type": "application/json",
               Accepts: "application/json",},
               body: JSON.stringify(clickinfo),
@@ -26,9 +25,8 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
         } else {
             setNum(num - 1);
             setGoing(true)
-            clickinfo.AddOrSubtractFromList = "subtract"
             fetch("http://localhost:9292/Users",{
-              method : "PATCH",
+              method : "PUT",
               headers : { "Content-Type": "application/json",
               Accepts: "application/json",},
               body: JSON.stringify(clickinfo),
