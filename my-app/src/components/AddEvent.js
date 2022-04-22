@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function AddEvent({handleFrontEnd}){
     const [name, setName] = useState("")
-    const [image, setImage] = useState("")
+    const [img, setImage] = useState("")
     const [location, setLocation] = useState("")
     const [date, setDate] = useState("")
     const [description, setDescription] = useState("")
@@ -51,7 +51,7 @@ function AddEvent({handleFrontEnd}){
             e.preventDefault();
             const newEvent = {
                 name: name,
-                image: image,
+                img: img,
                 location: location,
                 date: date,
                 description: description,
