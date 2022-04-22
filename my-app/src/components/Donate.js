@@ -1,9 +1,21 @@
 import DonateCard from './DonateCard';
-import {useState} from 'react';
-function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate}){
+import {useState, useEffect} from 'react';
+function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate, user}){
     const [name, setName] = useState("")
     const [story, setStory] = useState("")
     const [amount, setAmount] = useState(0)
+
+    const renderDonates = donate.map(i => <><DonateCard 
+        name={i.name}
+        story={i.story}
+        amount={i.amount}/></>)
+
+
+    useEffect(() => {
+        fetch("http://localhost:9292/Donate")
+        .then(r => r.json())
+        .then(donations => setDonate(donations))
+    },[setDonate])
 
     function handleName(event) {
         setName(event.target.value)
@@ -28,16 +40,10 @@ function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate})
             Accepts: "application/json",},
             body: JSON.stringify(newDonation),
             })
-          .then((r) => handleFrontEndDonation(newDonation))
+          .then((r) => {handleFrontEndDonation(newDonation)})
+          e.target.reset();
+        }
 
-
-    e.target.reset();
-
-    }
-    const renderDonates = donate.map(i => <><DonateCard 
-        name={i.name}
-        story={i.story}
-        amount={i.amount}/></>)
 
     return (
         <>
@@ -51,7 +57,7 @@ function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate})
         </div>
        {donate? renderDonates : null}
        {/* <DonateCard name={name} amount={amount} story={story}/> */}
-       <button className="donateBtn"  onClick={toggleShow}>Create +</button> 
+       {user ? (<button className="donateBtn"  onClick={toggleShow}>Create +</button>) : null} 
        {isShow ? 
                 (
                     <form className="DonateForm" onSubmit={handleSubmit}>

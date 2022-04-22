@@ -3,7 +3,6 @@ import GoingToList from "./GoingToList";
 import {useState} from 'react';
 
 function Home({toggleShow, isShow, setUser, user}){
-    const[newUser, setNewUser] = useState([]);
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -23,10 +22,6 @@ function Home({toggleShow, isShow, setUser, user}){
    function reload() {
     window.location.reload(false);
   }
-  function handleFrontEnd(newUserObject) {
-    const addNewUserObject = [...newUser, newUserObject]
-    setNewUser(addNewUserObject);
-  }
 
   function handleSubmit(e){
     e.preventDefault();
@@ -40,7 +35,7 @@ function Home({toggleShow, isShow, setUser, user}){
         Accepts: "application/json",},
         body: JSON.stringify(newUser),
         })
-    .then((r) => handleFrontEnd(newUser))
+    .then(() => window.location.reload(false))
 
 
     e.target.reset();

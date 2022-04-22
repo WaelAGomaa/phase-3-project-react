@@ -1,17 +1,14 @@
 function Login({setUser}) {
 
-
- 
-
     function handleLogin(e){
         e.preventDefault();
 
-        let login = {
+        const login = {
             username: e.target[0].value,
             password: e.target[1].value
         }
         fetch("http://localhost:9292/Users",{
-            method : "POST",
+            method : "PATCH",
             headers : { "Content-Type": "application/json",
             Accepts: "application/json",},
             body: JSON.stringify(login),

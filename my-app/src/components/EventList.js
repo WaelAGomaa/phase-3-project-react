@@ -1,8 +1,8 @@
 import Events from "./Events";
 
-function EventList({events, user}) {
+function EventList({events, user, toggle, setToggle}) {
 
-const renderEvents = events.map(event => <><Events 
+  const renderEvents = events.map(event => <><Events 
     key={event.id}
     id={event.id}
     name={event.name}
@@ -18,6 +18,8 @@ const renderEvents = events.map(event => <><Events
     img={event.img}
     events={events}
     user={user}
+    setToggle={setToggle}
+    toggle={toggle}
 />
 </>)
 

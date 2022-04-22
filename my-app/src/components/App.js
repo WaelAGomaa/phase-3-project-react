@@ -6,7 +6,6 @@ import EventList from "./EventList";
 import Donate from "./Donate";
 import About from './About';
 import Home from "./Home";
-import DonateCard from "./DonateCard";
 
 function App() {
   const [events, setEvent] = useState([]);
@@ -14,6 +13,7 @@ function App() {
   const [newGoing, setNewGoing] = useState(false);
   const [user, setUser] = useState(null)
   const [isShow , setShow] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   
   function toggleShow() {
@@ -38,9 +38,9 @@ function handleFrontEndDonation(newDonationObject) {
       <Switch>
       <Route path="/Home"><Home user={user} setUser={setUser} toggleShow={toggleShow} isShow={isShow}/></Route>
       <Route path="/About"><About /></Route>
-      <Route path="/Donate"><Donate toggleShow={toggleShow} isShow={isShow} handleFrontEndDonation={handleFrontEndDonation} setDonate={setDonate} donate={donate}/></Route>
-        <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd}/></Route>
-        <Route path="/Events"><EventList events={events}
+      <Route path="/Donate"><Donate toggleShow={toggleShow} isShow={isShow} handleFrontEndDonation={handleFrontEndDonation} setDonate={setDonate} user={user} donate={donate}/></Route>
+        <Route path="/AddEvent"><AddEvent handleFrontEnd={handleFrontEnd} /></Route>
+        <Route path="/Events"><EventList setToggle={setToggle} toggle={toggle} events={events}
         newGoing={newGoing}
         setNewGoing={setNewGoing} user={user}
         /></Route>

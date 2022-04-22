@@ -1,11 +1,9 @@
 import {useState} from 'react'
 
-function Events({key, id, user, name, location, date, description, guestAmounts, ageMin, ageMax, liquor, dj, green, img, events, newGoing, setNewGoing}) {
+function Events({key, id, user, name, location, date, description, guestAmounts, ageMin, ageMax, liquor, dj, green, img, events, newGoing, setNewGoing, toggle, setToggle}) {
 
 
     let [num, setNum]= useState(guestAmounts);
-    let { eventGoing } = events;
-
     const [going, setGoing] = useState(false);
 
     function handleClick(e) {
@@ -41,8 +39,11 @@ function Events({key, id, user, name, location, date, description, guestAmounts,
    setNum(e.target.value);
   }
   function handleDelete(e){
-  fetch(`http://localhost:9292/Events/${parseInt(e.target.id)}`,{
-    method:'DELETE'})}
+    setToggle(!toggle);
+    fetch(`http://localhost:9292/Events/${parseInt(e.target.id)}`,{
+    method:'DELETE'})
+
+  }
 
     return (
         <li id="EventCard">
