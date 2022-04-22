@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function DonateCard({name, story, amount}){
+function DonateCard({name, story, amount, user}){
     const [donate, setDonate] = useState(true);
     let [num, setNum]= useState(0);
 
@@ -32,7 +32,7 @@ function DonateCard({name, story, amount}){
     </p>
     <h4 type="text" value={num} onChange={handleChange}>{num}$ raised of {amount}$ </h4> 
 
-    <button className="donateBtn2" onClick={handleClick}>{donate ? "Donate $10" : "Donate again?"}</button>
+    {user ? (<button className="donateBtn2" onClick={handleClick}>{donate ? "Donate $10" : "Donate again?"}</button>) : (<button className="donateBtn2">Login to donate</button>)}
 
     </ul>
     )

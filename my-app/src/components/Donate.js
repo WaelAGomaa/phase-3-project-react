@@ -8,7 +8,8 @@ function Donate({toggleShow, isShow, handleFrontEndDonation, setDonate, donate, 
     const renderDonates = donate.map(i => <><DonateCard 
         name={i.name}
         story={i.story}
-        amount={i.amount}/></>)
+        amount={i.amount}
+        user={user}/></>)
 
 
     useEffect(() => {
