@@ -23,7 +23,7 @@ function App() {
   fetch('http://localhost:9292/Events')
   .then(resp => resp.json())
   .then(data => setEvent(data))
-}, []);
+}, [toggle]);
 function handleFrontEnd(newEventObject) {
   const addNewEventObject = [...events, newEventObject]
     setEvent(addNewEventObject);
